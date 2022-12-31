@@ -24,3 +24,34 @@ myClosure(10,20)
 
 // Function의 parameter에 closure를 넣어서 사용하는 방식
 
+func f1(){
+    print("작업중...")
+    print("작업중...")
+    
+    f2()
+}
+
+func f2(){
+    print("작업완료처리")
+}
+
+f1()
+
+
+
+func f10(myClosure : () -> Void) {
+    print("작업중...")
+    print("작업중...")
+    
+    myClosure()
+}
+
+func f20() {
+    print("작업완료처리")
+}
+
+f10(myClosure: { () -> Void in f20() } )
+f10(myClosure: { f20() } )
+f10 {f20()}
+
+f10 {print("내가 원하는 로직")}

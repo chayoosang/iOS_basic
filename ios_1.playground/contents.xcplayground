@@ -3,5 +3,6 @@
     <pages>
         <page name='Closure'/>
         <page name='var, let, optional'/>
+        <page name='Enum'/>
     </pages>
 </playground>

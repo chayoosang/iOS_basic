@@ -146,5 +146,99 @@ myFunc7 { num in
 
 // Capturing Values
 
-// reference type (class, function, closure) -> 참조 개념
-// value type (Int, String, Array, Dictionary, struct) -> 값을 사용 개념
+// reference type (class, function, closure) -> 참조
+// value type (Int, String, Array, Dictionary, struct) -> 값을 사용
+
+
+var str: String? = "a"
+var str2 = str
+var str3 = str2
+
+class SomeA{
+    
+}
+
+class SomeClass {
+    var b = 10
+
+    
+    func someFunc() {
+        print(b)
+        self.b
+        b
+    }
+    
+    // lazy -> 내가 해당 부분에 접근할 때 만들어진다.
+    // self == java의 this
+    // self를 사용하는 순간 class 자신 자체를 참조한다는 의미
+    // 외부에 있는것을 접근 하는 것을 Capturing
+    // Closure가 Capturing 하고 있을 때는 class가 해제가 안된다. -> Closure도 nil로 해제해야 한다.
+    lazy var myClosure: (() -> Void)? = {
+        print(self.b)
+    }
+    
+    // capture list -> 매번 nil을 주기 번거로울 때 사용
+    // 참조 하는것이 아닌 복사를 하여 사용
+    // 만약 reference type을 사용해야 할 경우 weak를 통해 약한 참조를 사용한다.
+    lazy var myClosure2 = { [weak self] in
+        print(self?.b ?? 0)
+    }
+    
+     // deinit -> 메모리에서 해제되었다
+    deinit {
+        print("SomeClass deinit")
+    }
+}
+
+var myClass: SomeClass? = SomeClass()
+var myClass2 = myClass
+
+myClass?.b = 20
+myClass2?.b
+
+// 모든 참조를 끊어야 메모리에서 해제가 된다.
+
+myClass?.myClosure = nil
+
+myClass?.myClosure2
+
+myClass = nil
+myClass2 = nil
+
+
+// Closure4
+
+// escaping closure (탈출)
+// escaping은 function이 끝나더라도 언제 실행될 지 모를 때 사용하는 키워드이다.
+
+
+var myClosureList = [() -> Void] ()
+
+func showString2(completion: @escaping () -> Void) {
+    myClosureList.append(completion)
+}
+
+showString2 {
+    print("aa")
+}
+showString2 {
+    print("bb")
+}
+
+showString2 {
+    print("cc")
+}
+
+myClosureList
+
+
+myClosureList.forEach { completion in
+    completion()
+}
+
+var names = ["lee", "kim", "jim", "min"]
+
+names.sort { str1, str2 in
+    return str1 < str2
+}
+names

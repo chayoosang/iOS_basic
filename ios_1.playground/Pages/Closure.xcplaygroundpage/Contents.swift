@@ -145,3 +145,6 @@ myFunc7 { num in
 // Closure 3
 
 // Capturing Values
+
+// reference type (class, function, closure) -> 참조 개념
+// value type (Int, String, Array, Dictionary, struct) -> 값을 사용 개념

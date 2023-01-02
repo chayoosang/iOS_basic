@@ -4,5 +4,6 @@
         <page name='Closure'/>
         <page name='var, let, optional'/>
         <page name='Enum'/>
+        <page name='Struct, Class'/>
     </pages>
 </playground>

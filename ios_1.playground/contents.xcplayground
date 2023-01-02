@@ -5,6 +5,7 @@
         <page name='var, let, optional'/>
         <page name='Enum'/>
         <page name='Struct, Class'/>
+        <page name='Property'/>
         <page name='init, deinit'/>
     </pages>
 </playground>

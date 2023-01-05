@@ -9,5 +9,6 @@
         <page name='init, deinit'/>
         <page name='Error Handling'/>
         <page name='Subscripts'/>
+        <page name='Protocol'/>
     </pages>
 </playground>

@@ -10,5 +10,7 @@
         <page name='Error Handling'/>
         <page name='Subscripts'/>
         <page name='Protocol'/>
+        <page name='Type Casting'/>
+        <page name='Generic'/>
     </pages>
 </playground>

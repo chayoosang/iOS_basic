@@ -12,5 +12,7 @@
         <page name='Protocol'/>
         <page name='Type Casting'/>
         <page name='Generic'/>
+        <page name='Higher order function'/>
+        <page name='Concurrency'/>
     </pages>
 </playground>

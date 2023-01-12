@@ -199,7 +199,7 @@ player1?.plus()
 player2?.plus()
 
 Bank.coin
-
+    
 player1 = nil
 
 Bank.coin

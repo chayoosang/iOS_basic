@@ -101,7 +101,6 @@ myFunc4(i: 50) {
 
 
 // closure + parmeter
-
 func myFunc5(completion: (Int) -> Void) {
     print("func...")
     let total = 100

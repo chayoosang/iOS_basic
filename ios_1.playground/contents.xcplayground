@@ -14,5 +14,6 @@
         <page name='Generic'/>
         <page name='Higher order function'/>
         <page name='Concurrency'/>
+        <page name='JSON'/>
     </pages>
 </playground>

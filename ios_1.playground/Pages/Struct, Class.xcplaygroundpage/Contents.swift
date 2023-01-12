@@ -62,6 +62,5 @@ classScore.myScore = 100
 score2.myScore
 
 
-
-
+let ss = score2
 
